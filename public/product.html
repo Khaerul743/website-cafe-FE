@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daftar Produk</title>
+    <link rel="stylesheet" href="../assets/css/product.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <a href="/index.html">
+          <button class="back-button">← Back</button>
+        </a>
+        <h1>Daftar Produk</h1>
+        <div style="width: 80px"></div>
+        <!-- Spacer untuk centering -->
+      </header>
+
+      <div class="products">
+        <div class="product-card">
+          <img src="" alt="product.png" class="product-image" />
+          <div class="product-info">
+            <div class="product-name">Dummy</div>
+            <div class="product-price">Rp. 10000</div>
+            <button class="buy-button">Beli</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cart-badge" id="cartBadge">0</div>
+
+    <!-- Modal Checkout -->
+    <div class="modal" id="checkoutModal">
+      <div class="modal-content">
+        <span class="close-button" id="closeModal">&times;</span>
+        <div class="modal-header">
+          <h2>Checkout</h2>
+        </div>
+        <div class="modal-product">
+          <img
+            class="modal-product-image"
+            id="modalProductImage"
+            alt="Product Image"
+          />
+          <div class="modal-product-info">
+            <h3 id="modalProductName"></h3>
+            <p class="product-price" id="modalProductPrice"></p>
+          </div>
+        </div>
+
+        <div class="quantity-control">
+          <button class="quantity-btn" id="decreaseBtn">-</button>
+          <input
+            type="number"
+            class="quantity-input"
+            id="quantityInput"
+            value="1"
+            min="1"
+          />
+          <button class="quantity-btn" id="increaseBtn">+</button>
+        </div>
+
+        <div class="modal-summary">
+          <div class="summary-item">
+            <span>Harga Satuan:</span>
+            <span id="unitPrice"></span>
+          </div>
+          <div class="summary-item">
+            <span>Jumlah:</span>
+            <span id="quantitySummary">1</span>
+          </div>
+          <div class="summary-item total">
+            <span>Total:</span>
+            <span id="totalPrice"></span>
+          </div>
+        </div>
+
+        <button class="checkout-btn" id="checkoutBtn">
+          Selesaikan Pembelian
+        </button>
+        <div class="success-message" id="successMessage">
+          Pesanan berhasil! Terima kasih telah berbelanja.
+        </div>
+      </div>
+    </div>
+    <script type="module" src="../assets/js/productPage.js"></script>
+  </body>
+</html>
