@@ -17,7 +17,16 @@
         <!-- Spacer untuk centering -->
       </header>
 
-      <div class="products">
+      <div class="products" id="product">
+        <!-- <div class="product-card">
+          <img src="" alt="product.png" class="product-image" />
+          <div class="product-info">
+            <div class="product-name">Dummy</div>
+            <div class="product-price">Rp. 10000</div>
+            <button class="buy-button">Beli</button>
+          </div>
+        </div>
+
         <div class="product-card">
           <img src="" alt="product.png" class="product-image" />
           <div class="product-info">
@@ -26,7 +35,7 @@
             <button class="buy-button">Beli</button>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
 
     <div class="cart-badge" id="cartBadge">0</div>
@@ -51,7 +60,7 @@
         </div>
 
         <div class="quantity-control">
-          <button class="quantity-btn" id="decreaseBtn">-</button>
+          <button class="quantity-btn minus" id="decreaseBtn">-</button>
           <input
             type="number"
             class="quantity-input"
@@ -59,7 +68,7 @@
             value="1"
             min="1"
           />
-          <button class="quantity-btn" id="increaseBtn">+</button>
+          <button class="quantity-btn plus" id="increaseBtn">+</button>
         </div>
 
         <div class="modal-summary">
@@ -76,15 +85,16 @@
             <span id="totalPrice"></span>
           </div>
         </div>
-
         <button class="checkout-btn" id="checkoutBtn">
           Selesaikan Pembelian
         </button>
+        <data id="productId"></data>
         <div class="success-message" id="successMessage">
           Pesanan berhasil! Terima kasih telah berbelanja.
         </div>
       </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script type="module" src="../assets/js/productPage.js"></script>
   </body>
 </html>

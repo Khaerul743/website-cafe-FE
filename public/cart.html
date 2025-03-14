@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Cart</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/css/cart.css" />
+  </head>
+  <body>
+    <div class="cart-container">
+      <div class="cart-header">
+        <div class="cart-title">
+          <i class="fas fa-shopping-cart fa-2x cart-icon"></i>
+          <h1>Your Shopping Cart</h1>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-8 mb-4">
+          <!-- Cart Items -->
+          <div id="cart-items">
+            <!-- Item 1 -->
+            <div class="cart-item">
+              <div class="row g-0">
+                <div class="col-md-3">
+                  <img
+                    src="/api/placeholder/400/320"
+                    alt="Product 1"
+                    class="cart-item-img"
+                  />
+                </div>
+                <div class="col-md-9">
+                  <div class="cart-item-details">
+                    <div class="d-flex justify-content-between">
+                      <h4 class="cart-item-title">Premium Coffee Beans</h4>
+                      <i class="fas fa-times cart-item-remove"></i>
+                    </div>
+                    <p class="text-muted">Dark Roast, 250g</p>
+                    <div
+                      class="d-flex justify-content-between align-items-center"
+                    >
+                      <div class="quantity-control">
+                        <button class="quantity-btn">
+                          <i class="fas fa-minus"></i>
+                        </button>
+                        <span class="quantity-value">1</span>
+                        <button class="quantity-btn">
+                          <i class="fas fa-plus"></i>
+                        </button>
+                      </div>
+                      <div class="cart-item-price">$24.99</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 2 -->
+            <!-- <div class="cart-item">
+              <div class="row g-0">
+                <div class="col-md-3">
+                  <img
+                    src="/api/placeholder/400/320"
+                    alt="Product 2"
+                    class="cart-item-img"
+                  />
+                </div>
+                <div class="col-md-9">
+                  <div class="cart-item-details">
+                    <div class="d-flex justify-content-between">
+                      <h4 class="cart-item-title">Ceramic Coffee Mug</h4>
+                      <i class="fas fa-times cart-item-remove"></i>
+                    </div>
+                    <p class="text-muted">Handmade, 350ml</p>
+                    <div
+                      class="d-flex justify-content-between align-items-center"
+                    >
+                      <div class="quantity-control">
+                        <button class="quantity-btn">
+                          <i class="fas fa-minus"></i>
+                        </button>
+                        <span class="quantity-value">2</span>
+                        <button class="quantity-btn">
+                          <i class="fas fa-plus"></i>
+                        </button>
+                      </div>
+                      <div class="cart-item-price">$39.98</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+
+            <!-- Item 3 -->
+            <div class="cart-item">
+              <div class="row g-0">
+                <div class="col-md-3">
+                  <img
+                    src="/api/placeholder/400/320"
+                    alt="Product 3"
+                    class="cart-item-img"
+                  />
+                </div>
+                <div class="col-md-9">
+                  <div class="cart-item-details">
+                    <div class="d-flex justify-content-between">
+                      <h4 class="cart-item-title">French Press</h4>
+                      <i class="fas fa-times cart-item-remove"></i>
+                    </div>
+                    <p class="text-muted">Stainless Steel, 1L</p>
+                    <div
+                      class="d-flex justify-content-between align-items-center"
+                    >
+                      <div class="quantity-control">
+                        <button class="quantity-btn">
+                          <i class="fas fa-minus"></i>
+                        </button>
+                        <span class="quantity-value">1</span>
+                        <button class="quantity-btn">
+                          <i class="fas fa-plus"></i>
+                        </button>
+                      </div>
+                      <div class="cart-item-price">$34.99</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Empty State (hidden by default) -->
+          <div id="empty-cart" class="empty-cart" style="display: none">
+            <i class="fas fa-shopping-basket empty-cart-icon"></i>
+            <h3>Your cart is empty</h3>
+            <p>Looks like you haven't added any products to your cart yet.</p>
+            <a class="continue-shopping-btn" href="../index.html">
+              <i class="fas fa-arrow-left me-2"></i>Continue Shopping
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <!-- Cart Summary -->
+          <div class="cart-summary">
+            <h3 class="summary-title">Order Summary</h3>
+            <div class="summary-item">
+              <span>Subtotal (<span id="quantity">0</span> items)</span>
+              <span id="total">0</span>
+            </div>
+            <div class="summary-item">
+              <span>Shipping</span>
+              <span>Rp. 0</span>
+            </div>
+            <div class="summary-item">
+              <span>Tax</span>
+              <span>Rp. 0</span>
+            </div>
+            <div class="summary-item summary-total">
+              <span>Total</span>
+              <span id="total-price">$113.45</span>
+            </div>
+            <button class="checkout-btn" id="checkout">
+              <i class="fas fa-lock me-2"></i>Proceed to Checkout
+            </button>
+            <div class="d-flex justify-content-center gap-3 mt-3">
+              <i class="fab fa-cc-visa fa-2x text-muted"></i>
+              <i class="fab fa-cc-mastercard fa-2x text-muted"></i>
+              <i class="fab fa-cc-paypal fa-2x text-muted"></i>
+              <i class="fab fa-cc-amex fa-2x text-muted"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="../assets/js/cartPage.js"></script>
+  </body>
+</html>
